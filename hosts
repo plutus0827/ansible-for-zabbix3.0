@@ -1,0 +1,7 @@
+[zabbixservers]
+zabbix
+
+[zabbixAgentServers]
+zabbix
+zabbix-sub
+zabbix-sub2

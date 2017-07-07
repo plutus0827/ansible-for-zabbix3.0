@@ -1,0 +1,11 @@
+- name: setup zabbix server
+  hosts: zabbixservers
+  become: yes
+  roles:
+    - zabbix
+
+- name: setup zabbix-agent
+  hosts: zabbixAgentServers
+  become: yes
+  roles:
+    - zabbix-agent

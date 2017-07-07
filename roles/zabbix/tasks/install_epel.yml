@@ -1,0 +1,11 @@
+- name: download EPEL Repo - Centos/RHEL 7
+  get_url:
+    url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    dest: /tmp/epel-release-latest-7.noarch.rpm
+  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
+
+- name: install EPEL Repo - Centos/RHEL 7
+  yum:
+    name: /tmp/epel-release-latest-7.noarch.rpm
+    state: present
+  when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"

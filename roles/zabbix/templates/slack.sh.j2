@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#Test Slack URL
+url='{{ slackURL }}'
+username='{{ usernameForSlack }}'
+
+to="$1"
+subject="$2"
+message="${subject}: $3"
+
+payload="payload={\"channel\": \"${to//\"/\\\"}\", \"username\": \"${username//\"/\\\"}\", \"text\": \"${message//\"/\\\"}\"}"
+curl -m 5 --data-urlencode "${payload}" $url
